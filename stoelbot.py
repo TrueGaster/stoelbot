@@ -23,7 +23,7 @@ async def slash_ping(interaction: discord.Interaction):
 async def on_ready():
     print(f"Logged in as {bot.user} (id={bot.user.id})")
 
-    GUILD_ID = 123456789012345678
+    GUILD_ID = 1461085700307812536
     guild = discord.Object(id=GUILD_ID)
 
     bot.tree.copy_global_to(guild=guild)
@@ -45,3 +45,4 @@ async def on_message(message):
         await message.channel.send("pong")
 
 client.run(TOKEN)
+
