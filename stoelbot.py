@@ -11,18 +11,28 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 
 client = discord.Client(intents=intents)
 
+
+# prefix commands
 @bot.command()
 async def ping(ctx: commands.Context):
     await ctx.send("pong")
+async def twitch(ctx: commands.Context):
+    await ctx.send("twitch.tv/henrickstoel")
 
+# slash commands
 @bot.tree.command(name="ping", description="Responds with pong")
 async def slash_ping(interaction: discord.Interaction):
     await interaction.response.send_message("pong")
+@bot.tree.command(name="twitch", description="Responds with Twitch channel")
+async def slash_twitch(interaction: discord.Interaction):
+    await interaction.response.send_message("twitch.tv/henrickstoel")
 
+# events
 @bot.event
 async def on_ready():
     print(f"Logged in as {bot.user} (id={bot.user.id})")
 
+    # Change guild ID to your testing server ID
     GUILD_ID = 1461085700307812536
     guild = discord.Object(id=GUILD_ID)
 
