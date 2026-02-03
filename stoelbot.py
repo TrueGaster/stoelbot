@@ -16,6 +16,7 @@ client = discord.Client(intents=intents)
 @bot.command()
 async def ping(ctx: commands.Context):
     await ctx.send("pong")
+@bot.command()
 async def twitch(ctx: commands.Context):
     await ctx.send("twitch.tv/henrickstoel")
 
@@ -56,3 +57,4 @@ async def on_message(message):
 
 bot.run(TOKEN)
 client.run(TOKEN)
+
